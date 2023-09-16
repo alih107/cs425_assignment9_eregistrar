@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add student</title>
+</head>
+<body>
+<form action="#" th:action="@{/addstudent}" th:object="${student}" method="post">
+    <p>
+        <label for="firstName">First Name</label>
+        <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+    </p>
+    <p>
+        <label for="middleName">Middle Name</label>
+        <input type="text" th:field="*{middleName}" id="middleName" placeholder="Middle Name">
+        <span th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}"></span>
+    </p>
+    <p>
+        <label for="studentNumber">Student number</label>
+        <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+    </p>
+    <p>
+        <label for="studentNumber">Student number</label>
+        <input type="text" th:field="*{studentNumber}" id="studentNumber" placeholder="001-64-1730">
+        <span th:if="${#fields.hasErrors('studentNumber')}" th:errors="*{studentNumber}"></span>
+    </p>
+    <p>
+        <label for="isInternational">Is student international?</label>
+        <select id="isInternational" name="isInternational">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <span th:if="${#fields.hasErrors('isInternational')}" th:errors="*{isInternational}"></span>
+    </p>
+    <p>
+        <label for="dateOfEnrollment">Date of enrollment</label>
+        <input type="date" th:field="*{dateOfEnrollment}" id="dateOfEnrollment">
+        <span th:if="${#fields.hasErrors('dateOfEnrollment')}" th:errors="*{dateOfEnrollment}"></span>
+    </p>
+    <p>
+        <label for="cgpa">Cumulative GPA</label>
+        <input type="text" th:field="*{cgpa}" id="cgpa">
+        <span th:if="${#fields.hasErrors('cgpa')}" th:errors="*{cgpa}"></span>
+    </p>
+    <p>
+        <input type="submit" value="Add Student">
+    </p>
+</form>
+</body>
+</html>
